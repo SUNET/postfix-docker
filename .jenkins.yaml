@@ -1,0 +1,15 @@
+---
+environment_variables:
+  POSTFIX_VERSION: "3.7.5-2~SUNET-1"
+git:
+  branch: main
+triggers:
+  cron: "@daily"
+clean_workspace: true
+builders:
+  - docker
+docker_name: mail/postfix
+docker_tags:
+  - "${POSTFIX_VERSION}"
+  - "latest"
+docker_no_cache: true

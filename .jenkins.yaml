@@ -1,6 +1,4 @@
 ---
-environment_variables:
-  IMAGE_VERSION: 3.7.5-2-SUNET-1
 git:
   branch: main
 triggers:
@@ -10,6 +8,6 @@ builders:
   - docker
 docker_name: mail/postfix
 docker_tags:
-  - ${IMAGE_VERSION}
+  - SUNET-1
   - "latest"
 docker_no_cache: true

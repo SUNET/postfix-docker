@@ -7,6 +7,6 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 
 RUN mkdir /config
 RUN mv /etc/postfix/main.cf /etc/postfix/master.cf /config
-CMD postfix -v -c /config start-fg
+COPY start.sh /start.sh
+CMD /start.sh
 EXPOSE 25/tcp 587/tcp
-
